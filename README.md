@@ -138,6 +138,17 @@ Use of this dataset in publications must be cited to the following publication:
 
 - Lasso is the chosen model for the final model, because it creates a simple model with the top features.
 
+- Significant variables to predict the demand for shared bikes
+    - holiday
+    - temp
+    - hum
+    - windspeed
+    - Season
+    - months(January, July, September, November, December)
+    - Year (2019)
+    - Sunday
+    - weathersit( Light Snow, Mist + Cloudy)
+
 ## Technologies Used
 - Python - version 3.11.4
 - Matplotlib - version 3.7.1
