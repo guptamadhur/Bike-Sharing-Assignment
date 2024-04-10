@@ -10,6 +10,7 @@
 * [Model Evaluation](#model-evaluation)
 * [Dataset Characteristics](#dataset-characteristics)
 * [License](#license)
+* [Assignment Steps](#assignment-steps)
 * [Conclusions](#conclusions)
 * [Technologies Used](#technologies-used)
 * [Acknowledgements](#acknowledgements)
@@ -49,7 +50,6 @@ In the dataset provided, you will notice that there are three columns named 'cas
 ## Model Evaluation:
 When you're done with model building and residual analysis and have made predictions on the test set, just make sure you use the following two lines of code to calculate the R-squared score on the test set.
 
- 
 
 > from sklearn.metrics import r2_score
 r2_score(y_test, y_pred)
@@ -102,6 +102,25 @@ Use of this dataset in publications must be cited to the following publication:
 	pages={1-15}
 }
 
+## Assignment Steps
+
+### Data visualisations
+- perform EDA to understand various variables
+- check correlation between the variables 
+
+### Data preparation
+- clean the data structure
+- drop unneccessary variables
+- create dummy variables for all categorical features
+- divide the data to train and test
+- perform scaling
+- divide data into dependent and independent variables
+
+### Data modelling and evaluation
+- create linear regression model with no Regularisation
+- create models using Ridge and Lasso Regularisation
+- create additional models model using mixed approach (RFE & VIF/p-Value) and apply Ridge Regularisation
+- report the final model
 
 ## Conclusions
 
@@ -113,6 +132,12 @@ Use of this dataset in publications must be cited to the following publication:
 
 - Concepts such as EDA, p-value, VIF, RFE were used and model building was done using statsmodels library
 
+- `GrLivArea` is by far the most important predictor
+
+- The top variables are intuitive.
+
+- Lasso is the chosen model for the final model, because it creates a simple model with the top features.
+
 ## Technologies Used
 - Python - version 3.11.4
 - Matplotlib - version 3.7.1
@@ -121,8 +146,6 @@ Use of this dataset in publications must be cited to the following publication:
 - Seaborn - version 0.12.2
 - Statsmodels - version 0.14.1
 - Scikit-learn - version 1.4.2
-
-<!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
 
 ## Acknowledgements
 Give credit here.
@@ -135,7 +158,3 @@ Give credit here.
 Created by [@guptamadhur](https://github.com/guptamadhur/) - feel free to contact us!
 
 Developed as part of the Linear Regression Module required for Post Graduate Diploma in Machine Learning and AI - IIIT, Bangalore by Upgrad.
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
