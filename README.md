@@ -8,6 +8,8 @@
 * [Data Preparation](#data-preparation)
 * [Model Building](#model-building)
 * [Model Evaluation](#model-evaluation)
+* [Dataset Characteristics](#dataset-characteristics)
+* [License](#license)
 * [Conclusions](#conclusions)
 * [Technologies Used](#technologies-used)
 * [Acknowledgements](#acknowledgements)
@@ -49,20 +51,67 @@ When you're done with model building and residual analysis and have made predict
 
  
 
-from sklearn.metrics import r2_score
+> from sklearn.metrics import r2_score
 r2_score(y_test, y_pred)
  
 
 - where y_test is the test data set for the target variable, and y_pred is the variable containing the predicted values of the target variable on the test set.
 - Please don't forget to perform this step as the R-squared score on the test set holds some marks. The variable names inside the 'r2_score' function can be different based on the variable names you have chosen.
 
-## Conclusions
-- Conclusion 1 from the analysis
-- Conclusion 2 from the analysis
-- Conclusion 3 from the analysis
-- Conclusion 4 from the analysis
+## Dataset Characteristics
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+day.csv have the following fields:
+	
+	- instant: record index
+	- dteday : date
+	- season : season (1:spring, 2:summer, 3:fall, 4:winter)
+	- yr : year (0: 2018, 1:2019)
+	- mnth : month ( 1 to 12)
+	- holiday : weather day is a holiday or not (extracted from http://dchr.dc.gov/page/holiday-schedule)
+	- weekday : day of the week
+	- workingday : if day is neither weekend nor holiday is 1, otherwise is 0.
+	+ weathersit : 
+		- 1: Clear, Few clouds, Partly cloudy, Partly cloudy
+		- 2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+		- 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
+		- 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
+	- temp : temperature in Celsius
+	- atemp: feeling temperature in Celsius
+	- hum: humidity
+	- windspeed: wind speed
+	- casual: count of casual users
+	- registered: count of registered users
+	- cnt: count of total rental bikes including both casual and registered
+
+## License
+
+Use of this dataset in publications must be cited to the following publication:
+
+[1] Fanaee-T, Hadi, and Gama, Joao, "Event labeling combining ensemble detectors and background knowledge", Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg, doi:10.1007/s13748-013-0040-3.
+
+@article{
+	year={2013},
+	issn={2192-6352},
+	journal={Progress in Artificial Intelligence},
+	doi={10.1007/s13748-013-0040-3},
+	title={Event labeling combining ensemble detectors and background knowledge},
+	url={http://dx.doi.org/10.1007/s13748-013-0040-3},
+	publisher={Springer Berlin Heidelberg},
+	keywords={Event labeling; Event detection; Ensemble learning; Background knowledge},
+	author={Fanaee-T, Hadi and Gama, Joao},
+	pages={1-15}
+}
+
+
+## Conclusions
+
+- The R-squared value of the train set is 82.71% whereas the test set has a value of 81.13% which suggests that our model broadly explains the variance quite accurately on the test set and thus we can conclude that it is a good model.
+
+- Our developed model's mean squared error is almost 0 on both the training and testing datasets which suggests that the variance is accurately predicted on the test set. The p-values and VIF were used to select the significant variables. RFE was also conducted for automated selection of variables.
+
+- The major steps included in the python notebook are data interpretation, data visualisation, data pre-processing, model training, feature selection, residual analysis, model evaluation on the test set.
+
+- Concepts such as EDA, p-value, VIF, RFE were used and model building was done using statsmodels library
 
 ## Technologies Used
 - Python - version 3.11.4
@@ -70,6 +119,8 @@ r2_score(y_test, y_pred)
 - Numpy - version 1.24.3
 - Pandas - version 1.5.3
 - Seaborn - version 0.12.2
+- Statsmodels - version 0.14.1
+- Scikit-learn - version 1.4.2
 
 <!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
 
