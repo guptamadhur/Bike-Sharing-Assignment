@@ -102,21 +102,21 @@ Use of this dataset in publications must be cited to the following publication:
 	pages={1-15}
 }
 
-## Assignment Steps
+## Assignment Steps 
 
-### Data visualisations
-- perform EDA to understand various variables
-- check correlation between the variables 
-
-### Data preparation
+### 1. Data preparation
 - clean the data structure
 - drop unneccessary variables
 - create dummy variables for all categorical features
 - divide the data to train and test
 - perform scaling
-- divide data into dependent and independent variables
+- divide data into dependent and independent variables.
 
-### Data modelling and evaluation
+### 2. Data visualisations
+- perform EDA to understand various variables
+- check correlation between the variables 
+
+### 3. Data modelling and evaluation
 - create linear regression model with no Regularisation
 - create models using Ridge and Lasso Regularisation
 - create additional models model using mixed approach (RFE & VIF/p-Value) and apply Ridge Regularisation
